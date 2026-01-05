@@ -1,4 +1,4 @@
-name: Build Forge Mod 1.12.2
+name: lemon 0.0.9 1.12.2
 
 on:
   push:
