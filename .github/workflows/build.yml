@@ -1,8 +1,7 @@
 name: lemon 0.0.9 
 
 on:
-  push:
-  workflow_dispatch:
+  workflow_dispatch: 
 
 jobs:
   build:
@@ -23,10 +22,8 @@ jobs:
       run: chmod +x gradlew
 
     - name: Setup Forge Workspace
-    
       run: ./gradlew setupDecompWorkspace --no-daemon --console=plain
 
     - name: Build with Gradle
-      
       run: ./gradlew build -x test --stacktrace --no-daemon --console=plain
       
