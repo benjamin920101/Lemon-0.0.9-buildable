@@ -1,0 +1,52 @@
+package com.lemonclient.api.util.render;
+
+import java.awt.Color;
+import net.minecraft.client.renderer.GlStateManager;
+
+public class GSColor extends Color {
+   private static final long serialVersionUID = 1L;
+
+   public GSColor(int rgb) {
+      super(rgb);
+   }
+
+   public GSColor(int rgba, boolean hasalpha) {
+      super(rgba, hasalpha);
+   }
+
+   public GSColor(int r, int g, int b) {
+      super(r, g, b);
+   }
+
+   public GSColor(int r, int g, int b, int a) {
+      super(r, g, b, a);
+   }
+
+   public GSColor(Color color) {
+      super(color.getRed(), color.getGreen(), color.getBlue(), color.getAlpha());
+   }
+
+   public GSColor(GSColor color, int a) {
+      super(color.getRed(), color.getGreen(), color.getBlue(), a);
+   }
+
+   public static GSColor fromHSB(float hue, float saturation, float brightness) {
+      return new GSColor(Color.getHSBColor(hue, saturation, brightness));
+   }
+
+   public float getHue() {
+      return RGBtoHSB(this.getRed(), this.getGreen(), this.getBlue(), null)[0];
+   }
+
+   public float getSaturation() {
+      return RGBtoHSB(this.getRed(), this.getGreen(), this.getBlue(), null)[1];
+   }
+
+   public float getBrightness() {
+      return RGBtoHSB(this.getRed(), this.getGreen(), this.getBlue(), null)[2];
+   }
+
+   public void glColor() {
+      GlStateManager.color(this.getRed() / 255.0F, this.getGreen() / 255.0F, this.getBlue() / 255.0F, this.getAlpha() / 255.0F);
+   }
+}
