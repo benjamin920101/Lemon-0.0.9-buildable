@@ -1,10 +1,4 @@
-<!-- INFORMATION -->
-#### About
-Made buildable and decompiled for educational purposes.
-A utility mod for those who want 100+ modules
-
-#### Lemon Dev
-* Cute_Lemon_owo (original developer)
-
-#### License
-This project is licensed under the MIT License - see the LICENSE file for details
+# lemon 0.0.9 remapping
+- Regarding the lemon-0.0.9 jar leak: too many people have messaged me asking me to convert the jar back into source code.
+- Developer of Lemon 0.0.9 : Cute_Lemon_owo (original developer)
+- License: MIT license
