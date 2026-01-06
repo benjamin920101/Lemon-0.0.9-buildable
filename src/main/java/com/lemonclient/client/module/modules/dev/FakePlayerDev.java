@@ -69,7 +69,7 @@ public class FakePlayerDev extends Module {
             if (packet instanceof SPacketSoundEffect) {
                SPacketSoundEffect packetSoundEffect = (SPacketSoundEffect)packet;
                if (packetSoundEffect.getCategory() == SoundCategory.BLOCKS && packetSoundEffect.getSound() == SoundEvents.ENTITY_GENERIC_EXPLODE) {
-                  for (Entity entity : new ArrayList(mc.world.loadedEntityList)) {
+                  for (Entity entity : new ArrayList<Entity>(mc.world.loadedEntityList)) {
                      if (entity instanceof EntityEnderCrystal
                         && entity.getDistanceSq(packetSoundEffect.getX(), packetSoundEffect.getY(), packetSoundEffect.getZ()) <= 36.0
                         )

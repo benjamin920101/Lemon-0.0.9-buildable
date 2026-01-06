@@ -226,7 +226,7 @@ public class PistonAura extends Module {
             if (event.getPacket() instanceof SPacketSoundEffect) {
                SPacketSoundEffect packet = (SPacketSoundEffect)event.getPacket();
                if (packet.getCategory() == SoundCategory.BLOCKS && packet.getSound() == SoundEvents.ENTITY_GENERIC_EXPLODE) {
-                  for (Entity crystal : new ArrayList(mc.world.loadedEntityList)) {
+                  for (Entity crystal : new ArrayList<Entity>(mc.world.loadedEntityList)) {
                      if (crystal instanceof EntityEnderCrystal
                         && crystal.getDistance(packet.getX(), packet.getY(), packet.getZ()) <= this.range.getValue() + 5.0) {
                         crystal.setDead();
