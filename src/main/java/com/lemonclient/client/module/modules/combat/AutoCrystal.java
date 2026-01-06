@@ -1303,7 +1303,7 @@ public class AutoCrystal extends Module {
       return System.currentTimeMillis() - start;
    }
 
-   void drawBoxMain(double x, double y, double z) {
+      void drawBoxMain(double x, double y, double z) {
       AxisAlignedBB box = this.getBox(x, y, z);
       float size;
       if (this.check() && this.placeInfo.blockPos != null) {
@@ -1322,6 +1322,8 @@ public class AutoCrystal extends Module {
 
       int alpha = (int)(this.alpha.getValue().intValue() * size);
       int outAlpha = (int)(this.outAlpha.getValue().intValue() * size);
+      
+      // Biến damageText đầu tiên (kiểu String)
       String damageText = this.mode.getValue();
       switch (damageText) {
          case "Outline":
@@ -1337,13 +1339,15 @@ public class AutoCrystal extends Module {
 
       if (this.showDamage.getValue() && this.check() && this.placeInfo.blockPos != null) {
          box = this.getBox(x, y, z);
-         String[] damageText = new String[]{String.format("%.1f", this.placeInfo.dmg)};
+         
+         // Đã đổi tên thành damageDisplay (kiểu String[]) để tránh lỗi 'already defined'
+         String[] damageDisplay = new String[]{String.format("%.1f", this.placeInfo.dmg)};
          if (this.showSelfDamage.getValue()) {
-            damageText = new String[]{String.format("%.1f", this.placeInfo.dmg) + "/" + String.format("%.1f", this.placeInfo.selfDmg)};
+            damageDisplay = new String[]{String.format("%.1f", this.placeInfo.dmg) + "/" + String.format("%.1f", this.placeInfo.selfDmg)};
          }
 
          RenderUtil.drawNametag(
-            box.minX + 0.5, box.minY + 0.5, box.minZ + 0.5, damageText, new GSColor(255, 255, 255), 1, 0.02666666666666667, 0.0
+            box.minX + 0.5, box.minY + 0.5, box.minZ + 0.5, damageDisplay, new GSColor(255, 255, 255), 1, 0.02666666666666667, 0.0
          );
       }
    }
@@ -1396,4 +1400,4 @@ public class AutoCrystal extends Module {
          this.health = player.getHealth() + player.getAbsorptionAmount();
       }
    }
-}
+
