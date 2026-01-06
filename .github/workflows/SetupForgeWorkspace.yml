@@ -1,4 +1,4 @@
-name: lemon 0.0.9 
+name: Setup Forge Workspace
 
 on:
   workflow_dispatch: 
