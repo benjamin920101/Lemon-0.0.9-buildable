@@ -1,4 +1,4 @@
-name: lemon 0.0.9 buildable zulu
+name: lemon 0.0.9 buildable debugger
 
 on:
   workflow_dispatch: 
