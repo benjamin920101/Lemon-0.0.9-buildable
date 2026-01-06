@@ -814,8 +814,8 @@ public class HoleFill extends Module {
                .sendPacket(new Position(mc.player.posX, mc.player.posY - 1.0, mc.player.posZ, false));
             break;
          case "Strict":
-            double distance = 0.0;
-            BlockPos bestPos = null;
+            distance = 0.0;
+            bestPos = null;
 
             for (int i = 0; i < 20; i++) {
                BlockPos posx = new BlockPos(mc.player.posX, mc.player.posY + 0.5 + i, mc.player.posZ);
