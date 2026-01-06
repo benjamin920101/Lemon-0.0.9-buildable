@@ -232,7 +232,7 @@ public class BurrowBypass extends Module {
                PlayerUtil.centerPlayer();
             }
 
-            boolean isBypassed;
+            boolean isBypassing;
             if (!this.fakeBBoxCheck()) {
                if ((!this.testMode.getValue() || this.bypassBurrowed())
                   && (BlockUtil.canReplace(playerPos) && BlockUtil.canReplace(playerPos.up()) || !this.intersect(playerPos.up()))) {
@@ -287,9 +287,9 @@ public class BurrowBypass extends Module {
                   this.gotoPos(playerPos);
                }
 
-               bypassed = true;
+               isBypassing = true;
             } else {
-               bypassed = false;
+               isBypassing = false;
                String var22 = this.jumpMode.getValue();
                switch (var22) {
                   case "Normal":
@@ -398,7 +398,7 @@ public class BurrowBypass extends Module {
                      this.placeBlock(vecPos.add(vec3dx));
                   }
 
-                  if (this.head.getValue() && bypassed) {
+                  if (this.head.getValue() && isBypassing) {
                      for (Vec3d vec3dx : this.offsets) {
                         this.placeBlock(vecPos.add(vec3dx).add(0.0, 1.0, 0.0));
                      }
