@@ -6,8 +6,8 @@
 
 # Sending thanks to :
 - Cute_Lemon_owo because of Lemon 0.0.9 and the webhook with HWID.
-- do**i**49 : Thanks for your Lemon 0.0.9.
-- *id22 : Using a bot to re-replicate the code, fixing 50% of the fields and methods that were broken by Vineflower.
+- doihi1409 : Thanks for your Lemon 0.0.9.
+- uid22 : Using a bot to re-replicate the code, fixing 50% of the fields and methods that were broken by Vineflower.
 
 # license :
 - MIT license 
