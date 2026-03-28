@@ -68,8 +68,9 @@ public class ChatBot extends Module {
                      }
                   }
 
+                  String finalS1 = s;
                   NetworkPlayerInfo profile = infoMap.stream()
-                     .filter(networkPlayerInfo -> s.toLowerCase().contains(networkPlayerInfo.getGameProfile().getName().toLowerCase()))
+                     .filter(networkPlayerInfo -> finalS1.toLowerCase().contains(networkPlayerInfo.getGameProfile().getName().toLowerCase()))
                      .findFirst()
                      .orElse(null);
                   if (profile != null) {
@@ -84,8 +85,9 @@ public class ChatBot extends Module {
                   }
                } else if (s.startsWith("myping")) {
                   ArrayList<NetworkPlayerInfo> infoMap = new ArrayList<>(Minecraft.getMinecraft().getConnection().getPlayerInfoMap());
+                  String finalUsername = username;
                   NetworkPlayerInfo profile = infoMap.stream()
-                     .filter(networkPlayerInfo -> networkPlayerInfo.getGameProfile().getName().equalsIgnoreCase(username))
+                     .filter(networkPlayerInfo -> networkPlayerInfo.getGameProfile().getName().equalsIgnoreCase(finalUsername))
                      .findFirst()
                      .orElse(null);
                   if (profile != null) {
@@ -126,8 +128,9 @@ public class ChatBot extends Module {
                      }
                   }
 
+                  String finalS2 = s;
                   NetworkPlayerInfo profile = infoMap.stream()
-                     .filter(networkPlayerInfo -> s.toLowerCase().contains(networkPlayerInfo.getGameProfile().getName().toLowerCase()))
+                     .filter(networkPlayerInfo -> finalS2.toLowerCase().contains(networkPlayerInfo.getGameProfile().getName().toLowerCase()))
                      .findFirst()
                      .orElse(null);
                   if (profile != null) {
