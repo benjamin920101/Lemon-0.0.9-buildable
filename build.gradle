@@ -36,6 +36,14 @@ minecraft {
 	makeObfSourceJar = false
 }
 
+// 跳过资源下载任务，避免连接 Mojang 服务器失败
+gradle.taskGraph.whenReady { graph ->
+	def downloadAssetsTask = graph.hasTask(':downloadAssets')
+	if (downloadAssetsTask) {
+		tasks.downloadAssets.enabled = false
+	}
+}
+
 repositories {
 	maven {
 		name = 'spongepowered-repo'
